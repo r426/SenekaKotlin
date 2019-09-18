@@ -24,7 +24,7 @@ class ItemArrayAdapter(@NonNull context: Context, resource: Int, @NonNull object
 
         theDeleteButton = view.findViewById(R.id.delete_one)
         theDeleteButton.setOnClickListener {
-            remove(getItem(position))
+            remove(getItem(position)) // bug: removes items incorrectly
             WorkWithProverbs.getInstance().saveTheUpdatedList()
         }
         return view
